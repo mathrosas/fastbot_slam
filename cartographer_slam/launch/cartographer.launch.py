@@ -11,11 +11,11 @@ def generate_launch_description():
 
     return LaunchDescription([
         
-        Node(
-            package='fastbot_topic_filter',
-            executable='filter_node',
-            name='duplicate_filter'
-        ),
+        # Node(
+        #     package='fastbot_topic_filter',
+        #     executable='filter_node',
+        #     name='duplicate_filter'
+        # ),
         
         Node(
             package='cartographer_ros', 
@@ -26,8 +26,8 @@ def generate_launch_description():
             arguments=['-configuration_directory', cartographer_config_dir,
                        '-configuration_basename', configuration_basename],
             remappings=[
-                ('odom', '/fastbot_1/odom_filtered'),
-                ('scan', '/fastbot_1/scan_filtered'),
+                ('odom', '/fastbot_1/odom'),
+                ('scan', '/fastbot_1/scan'),
             ]
         ),
 
